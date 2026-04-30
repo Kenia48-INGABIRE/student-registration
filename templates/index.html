@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Students</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>Student Registration</h1>
+
+<form method="POST" action="/add">
+  <input name="name" placeholder="Name" required>
+  <input name="age" placeholder="Age" required>
+  <input name="classroom" placeholder="Classroom" required>
+  <input name="photo" placeholder="Image URL">
+  <button>Add</button>
+</form>
+
+<div class="students">
+  {% for s in students %}
+  <div class="card">
+    <img src="{{ s.photo }}">
+    <h3>{{ s.name }}</h3>
+    <p>{{ s.age }}</p>
+    <p>{{ s.classroom }}</p>
+    <a href="/update/{{ s.id }}">Edit</a>
+  </div>
+  {% endfor %}
+</div>
+
+</body>
+</html>

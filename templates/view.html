@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>View Student</title>
+</head>
+<body>
+
+<h1>Student Profile</h1>
+
+<div style="border:1px solid black; padding:20px; width:300px;">
+  <img src="{{ student.photo }}" width="100%">
+  <h2>{{ student.name }}</h2>
+  <p>Age: {{ student.age }}</p>
+  <p>Class: {{ student.classroom }}</p>
+</div>
+
+<br>
+
+<a href="/">⬅ Back</a>
+<a href="/update/{{ student.id }}">Edit</a>
+
+</body>
+</html>
