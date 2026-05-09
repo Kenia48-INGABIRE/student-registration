@@ -1,17 +1,17 @@
 body {
   font-family: Arial;
-  background: purple;
+  background:skyblue;
   text-align: center;
 }
 
 form input {
-  padding: 10px;
+  padding: 15px;
   margin: 5px;
 }
 
 button {
   padding: 10px;
-  background:red;
+  background:green;
   color:blue;
 }
 
