@@ -1,100 +1,167 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ===== ANIMATED BACKGROUND ===== */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7fc;
-    margin: 0;
-    padding: 0;
+  min-height: 100vh;
+  padding: 40px;
+  color: white;
+
+  background: linear-gradient(-45deg, #0f172a, #111827, #0ea5e9, #1e293b);
+  background-size: 400% 400%;
+  animation: bgMove 12s ease infinite;
 }
 
-/* Main container */
-.container {
-    width: 80%;
-    max-width: 900px;
-    margin: 40px auto;
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* Title */
+/* ===== TITLE ===== */
 h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 25px;
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 20px;
+
+  color: #00f5ff;
+  text-shadow: 0 0 15px #00f5ff;
 }
 
-/* Form styling */
+/* ===== SEARCH BOX (NEW) ===== */
+.search-box {
+  max-width: 500px;
+  margin: 0 auto 20px auto;
+  display: flex;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+
+  border: none;
+  outline: none;
+
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+/* ===== FORM ===== */
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  max-width: 800px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+
+  padding: 25px;
+
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(15px);
+
+  border-radius: 15px;
+  margin-bottom: 40px;
 }
 
-/* Inputs */
 input {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
+  padding: 12px;
+  border-radius: 10px;
+
+  border: none;
+  outline: none;
+
+  background: rgba(255,255,255,0.1);
+  color: white;
+
+  transition: 0.3s;
 }
 
-/* Add button */
+input:focus {
+  box-shadow: 0 0 10px #00f5ff;
+  transform: scale(1.02);
+}
+
 button {
-    background-color: #2563eb;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
+  grid-column: span 2;
+
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+
+  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+  color: white;
+
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: 0.3s;
 }
 
 button:hover {
-    background-color: #1d4ed8;
+  transform: scale(1.03);
+  box-shadow: 0 0 20px #06b6d4;
 }
 
-/* Student cards */
-.student-card {
-    background: #f9fafb;
-    border-left: 5px solid #2563eb;
-    padding: 15px;
-    margin-top: 20px;
-    border-radius: 10px;
+/* ===== STUDENT GRID ===== */
+.students {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+
+  max-width: 1100px;
+  margin: auto;
 }
 
-/* Student name */
-.student-card h3 {
-    margin: 0;
-    color: #111827;
+/* ===== CARD ===== */
+.card {
+  text-align: center;
+  padding: 15px;
+
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(12px);
+
+  border-radius: 15px;
+
+  transition: 0.3s;
 }
 
-/* Student details */
-.student-card p {
-    margin: 5px 0;
-    color: #4b5563;
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(0,255,255,0.3);
 }
 
-/* Student image */
-.student-card img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-top: 10px;
+.card img {
+  width: 90px;
+  height: 90px;
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  border: 2px solid #00f5ff;
+  margin-bottom: 10px;
 }
 
-/* Edit button */
-.edit-btn {
-    display: inline-block;
-    margin-top: 10px;
-    background-color: #10b981;
-    padding: 8px 14px;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
+.card h3 {
+  color: #00f5ff;
 }
 
-.edit-btn:hover {
-    background-color: #059669;
+.card p {
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 8px;
+
+  color: #06b6d4;
+  text-decoration: none;
+  font-weight: bold;
 }
